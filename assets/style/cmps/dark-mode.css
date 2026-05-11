@@ -1,0 +1,16 @@
+/* Dark Mode Css  */
+
+.dark-mode-toggle-btn {
+    padding: 10px 14px;
+    border: none;
+    max-width: fit-content;
+    border-radius: 10px;
+    cursor: pointer;
+    background: var(--primary);
+    color: white;
+    transition: 0.3s;
+}
+
+.dark-mode-toggle-btn:hover {
+    background: var(--primary-hover);
+}

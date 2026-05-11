@@ -1,0 +1,9 @@
+/* app-header css */
+
+.app-header {
+  background-color: var(--primary);
+  color: var(--bg);
+  padding: 1em;
+  grid-auto-flow: column;
+  justify-content: space-between;
+}

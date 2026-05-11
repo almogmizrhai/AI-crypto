@@ -1,0 +1,74 @@
+/* basic layout css */
+
+.main-layout {
+  margin: 0 auto;
+  padding-left: 1.6rem;
+  padding-right: 1.6rem;
+
+  display: grid;
+
+  grid-template-columns: 240px 1fr 300px;
+
+  grid-template-rows: auto 1fr auto;
+
+  grid-template-areas:
+    "header header header"
+    "sidebar main content"
+    "footer footer footer";
+
+  min-height: 100vh;
+  gap: 16px;
+
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.container {
+  padding: 1em;
+  margin: auto;
+}
+
+.header {
+  grid-area: header;
+}
+
+.sidebar {
+  grid-area: sidebar;
+}
+
+.main {
+  grid-area: main;
+}
+
+.content {
+  grid-area: content;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+@media (max-width: 1024px) {
+  .layout {
+    grid-template-columns: 200px 1fr;
+
+    grid-template-areas:
+      "header header"
+      "sidebar main"
+      "content content"
+      "footer footer";
+  }
+}
+
+@media (max-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr;
+
+    grid-template-areas:
+      "header"
+      "main"
+      "sidebar"
+      "content"
+      "footer";
+  }
+}

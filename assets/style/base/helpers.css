@@ -1,0 +1,81 @@
+/* css helpers */
+
+/* flex helpers */
+
+.flex {
+    display: flex;
+}
+
+.flex.flex-column{
+    flex-direction: column;
+}
+
+.flex.justify-center{
+    justify-content: center;
+}
+
+.flex.justify-between{
+    justify-content: space-between;
+}
+
+.flex.align-center{
+    align-items: center;
+}
+
+/* Grid utilities */
+.grid {
+    display: grid;
+}
+
+.grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-auto {
+    grid-auto-rows: min-content;
+}
+/* text helpers */
+.colored-text {
+    color: var(--clr1);
+}
+.text-center { text-align: center; }
+.text-bold { font-weight: bold; }
+.text-large { font-size: 1.4rem; }
+.text-uppercase { text-transform: uppercase; }
+
+/* Radius */
+.rounded { border-radius: 8px; }
+
+/* list helpers */
+
+.clean-list {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+/* font awsome */
+
+.fa {
+    font-family: fa;
+}
+
+.fa.fa-facebook::before {
+    content: "\f39e";
+}
+
+.fa.fa-twitter::before {
+    content: "\f099";
+}
+
+.fa.fa-dribbble::before {
+    content: "\f17d";
+}
+
+.fa.fa-behance::before {
+    content: "\f1b4";
+}
