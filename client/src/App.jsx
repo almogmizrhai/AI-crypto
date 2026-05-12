@@ -1,18 +1,24 @@
 // app jsx
 
-import { Home } from './cmps/Home.jsx'
-import { DarkMode } from './cmps/DarkMode.jsx'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+
+import { Home } from './pages/Home.jsx'
+import { SignupPage } from './pages/SignupPage.jsx'
+import { LoginPage } from './pages/LoginPage.jsx'
+import { OnBoardingPage } from './pages/OnBoardingPage.jsx'
+import { DashboardPage } from './pages/DashboardPage.jsx'
+
 
 export function App() {
-    return (
-        <section className="app">
-            <header className="app-header header grid">
-                <h1>My App  </h1>
-                <DarkMode />
-            </header>
-            <main className="container main">
-                <Home />
-            </main>
-        </section>
-    )
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/signup' element={<SignupPage />} />
+        <Route path='/login' element={<LoginPage />} />
+        <Route path='/onboarding' element={<OnBoardingPage />} />
+        <Route path='/dashboard' element={<DashboardPage />} />
+      </Routes>
+    </BrowserRouter>
+  )
 }
