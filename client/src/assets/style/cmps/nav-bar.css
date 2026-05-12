@@ -1,0 +1,26 @@
+/* Nav bar css */
+
+.nav-bar {
+    grid-auto-flow: column;
+    justify-content: stretch;
+    align-items: baseline;
+    padding: 10px 20px;
+    background-color: var(--primary);
+    color: var(--text);
+
+    .navbar-links{
+        grid-auto-flow: column;
+        gap: 5px;
+
+        a{
+            text-align: center;
+            border-radius: 10px;
+            padding: 5px 7px;
+        }
+
+        :hover{
+            background-color: var(--primary-hover);
+        }
+        
+    }
+}
