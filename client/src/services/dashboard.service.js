@@ -72,3 +72,31 @@ export async function getCryptoNews(assets = []) {
         assets.includes(news.asset)
 )
 }
+
+export async function getAiInsight(user) {
+    const assets = user?.preferences?.assets?.join(', ') || 'crypto'
+    
+    return {
+        id: 'insight-1',
+        title: 'AI Insight of the Day',
+        text: `Based on your interest in ${assets}, today's market looks mixed. Keep tracking price changes, news sentiment, and long-term trends before making decisions.`,
+    }
+}
+
+export async function getCryptoMeme() {
+    const memes = [
+        {
+            id: 'meme-1',
+            title: 'When you buy the dip and it keeps dipping',
+            imageUrl:
+            'https://i.imgflip.com/4/1bij.jpg',
+        },
+        {
+            id: 'meme-2',
+            title: 'Crypto investors checking prices every 5 minutes',
+            imageUrl:
+            'https://i.imgflip.com/30b1gx.jpg',
+        },
+    ]
+  return memes[Math.floor(Math.random() * memes.length)]
+}
