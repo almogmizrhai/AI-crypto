@@ -11,9 +11,13 @@ export function DashboardPage() {
     return (
     <main className="dashboard-page">
         <DashboardHeader />
+        <hr />
         <CoinSection />
+        <hr />
         <NewsSection />
+        <hr />
         <InsightSection />
+        <hr />
         <MemeSection />
     </main>
     )

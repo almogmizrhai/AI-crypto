@@ -1,1 +1,24 @@
 /* news-section css */
+
+.news-section {
+    display: grid;
+    grid-auto-flow: row;
+    margin: 20px 0;
+
+    .news-list{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+        .news-card{
+            a{
+                border: 1px solid var(--border);
+                border-radius: 10px;
+                padding: 5px 7px;
+            }
+            a:hover{
+                background-color: var(--primary-hover);
+            }
+
+        }
+    }
+}

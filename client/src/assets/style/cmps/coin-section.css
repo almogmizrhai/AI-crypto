@@ -3,6 +3,7 @@
 .coin-section {
     display: grid;
     grid-auto-flow: row;
+    margin: 20px 0;
 
     .coin-grid{
         display: grid;

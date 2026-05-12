@@ -31,3 +31,44 @@ export async function getCoinPrices(coins) {
         throw err
     }
 }
+
+export async function getCryptoNews(assets = []) {
+    const fallbackNews = [
+        {
+            id: 'news-1',
+            title: 'Bitcoin market shows renewed investor interest',
+            source: 'Crypto Daily',
+            asset: 'BTC',
+            url: '#',
+        },
+        
+        {
+            id: 'news-2',
+            title: 'Ethereum developers discuss future scaling improvements',
+            source: 'Blockchain News',
+            asset: 'ETH',
+            url: '#',
+        },
+        
+        {
+            id: 'news-3',title: 'Solana ecosystem continues to grow with new apps',
+            source: 'Web3 Updates',
+            asset: 'SOL',
+            url: '#',
+        },
+        
+        {
+            id: 'news-4',
+            title: 'Dogecoin community activity rises again',
+            source: 'Meme Coin Watch',
+            asset: 'DOGE',
+            url: '#',
+        },
+    ]
+    
+    if (!assets.length) return fallbackNews
+    
+    return fallbackNews.filter((news) =>
+        assets.includes(news.asset)
+)
+}
