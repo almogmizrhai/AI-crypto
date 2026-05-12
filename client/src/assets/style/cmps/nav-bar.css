@@ -16,11 +16,24 @@
             text-align: center;
             border-radius: 10px;
             padding: 5px 7px;
+            min-width: 90px;
+
+            &:hover{
+                background-color: var(--primary-hover);
+            }
+        }
+        
+        button{
+            text-align: center;
+            border-radius: 10px;
+            padding: 5px 7px;
+            min-width: 90px;
+
+            &:hover{
+                background-color: var(--primary-hover);
+            }
         }
 
-        :hover{
-            background-color: var(--primary-hover);
-        }
         
     }
 }

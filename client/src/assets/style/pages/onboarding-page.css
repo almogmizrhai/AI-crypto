@@ -1,0 +1,39 @@
+/* onboarding page css  */
+
+.onboarding-page{
+    padding: 0 80px;
+
+    .onboarding-form{
+        display: grid;
+        gap: 10px;
+
+        .options{
+            display: grid;
+            grid-auto-flow: column;
+
+            button{
+                border: 1px solid var(--border);
+                border-radius: 5px;
+                background-color: var(--primary);
+
+                &:hover{
+                    background-color: var(--primary-hover);
+                }
+
+                .selected{
+                    background-color: var(--primary-hover);
+                }
+            }
+        }
+    }
+    
+    button{
+        border: 1px solid var(--border);
+        border-radius: 5px;
+        background-color: var(--primary);
+        
+        &:hover{
+            background-color: var(--primary-hover);
+        }
+    }
+}
