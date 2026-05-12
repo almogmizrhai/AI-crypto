@@ -22,6 +22,8 @@ export function App() {
         <Route path='/onboarding' element={<OnBoardingPage />} />
         <Route path='/dashboard' element={<DashboardPage />} />
       </Routes>
+
+      <div className='user-msg' hidden></div>
     </BrowserRouter>
   )
 }

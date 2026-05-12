@@ -1,0 +1,27 @@
+/* signup page css */
+
+.signup-page{
+    padding: 0 80px;
+
+    .signup-form{
+        display: grid;
+        gap: 20px;
+        padding: 10px 0;
+        justify-content: center;
+        justify-items: end;
+
+        input{
+            padding: 10px 14px;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+        }
+
+        .btn-signup{
+            background-color: var(--primary);
+
+            &:hover{
+                background-color: var(--primary-hover);
+            }
+        }
+    }
+}

@@ -10,6 +10,10 @@
 @import 'base/layout.css';
 @import 'base/forms.css';
 
+/* PAGES */
+@import 'pages/signup-page.css';
+@import 'pages/login-page.css';
+
 /* Components */
 @import 'cmps/app-header.css';
 @import 'cmps/dark-mode.css';

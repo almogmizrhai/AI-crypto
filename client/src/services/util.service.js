@@ -10,7 +10,6 @@ export const utilService = {
     getDayName,
     getMonthName,
     _calculateAge,
-    getRandomIntInclusive,
     generateMat,
     findEmptyPos,
     copyBoard,
@@ -24,7 +23,7 @@ export const utilService = {
 }
 
 // make rendome id
-function makeId(length = 6) {
+export function makeId(length = 6) {
     var txt = ''
     var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
     for (var i = 0; i < length; i++) {
@@ -34,7 +33,7 @@ function makeId(length = 6) {
 }
 
 // make rendome sentence
-function makeLorem(size = 100) {
+export function makeLorem(size = 100) {
     var words = ['The sky', 'above', 'the port', 'was', 'the color of television', 'tuned', 'to', 'a dead channel', '.', 'All', 'this happened', 'more or less', '.', 'I', 'had', 'the story', 'bit by bit', 'from various people', 'and', 'as generally', 'happens', 'in such cases', 'each time', 'it', 'was', 'a different story', '.', 'It', 'was', 'a pleasure', 'to', 'burn']
     var txt = ''
     while (size > 0) {
@@ -45,26 +44,26 @@ function makeLorem(size = 100) {
 }
 
 // save from storage 
-function saveToStorage(key, value) {
+export function saveToStorage(key, value) {
     localStorage.setItem(key, JSON.stringify(value))
 }
 // load from storage 
-function loadFromStorage(key) {
+export function loadFromStorage(key) {
     const data = localStorage.getItem(key)
     return (data) ? JSON.parse(data) : undefined
 }
 
-function padNum(num) {
+export function padNum(num) {
     return (num + '').padStart(2, '0')
 }
 
 // Date - day and year
-function getDayName(date, locale) {
+export function getDayName(date, locale) {
     date = new Date(date)
     return date.toLocaleDateString(locale, { weekday: 'long' })
 }
 // Date - day and year
-function getMonthName(date) {
+export function getMonthName(date) {
     const monthNames = ['January', 'February', 'March', 'April', 'May', 'June',
         'July', 'August', 'September', 'October', 'November', 'December'
     ]
@@ -72,7 +71,7 @@ function getMonthName(date) {
 }
 
 //calculate age
-function _calculateAge(dateStr) {
+export function _calculateAge(dateStr) {
     const today = new Date()
     const birthDate = new Date(dateStr)
     let age = today.getFullYear() - birthDate.getFullYear()
@@ -86,14 +85,14 @@ function _calculateAge(dateStr) {
 }
 
 // generate a random integer between min and up to, but not including, max
-function getRandomIntInclusive(min, max) {
+export function getRandomIntInclusive(min, max) {
     const minCeiled = Math.ceil(min)
     const maxFloored = Math.floor(max)
     return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled)
 }
 
 //A function that receives a number of rows and a number of columns and accordingly creates a matrix with random numbers. 
-function generateMat(rows, cols) {
+export function generateMat(rows, cols) {
 	const mat = []
 
 	for (var i = 0; i < rows; i++) {
@@ -108,7 +107,7 @@ function generateMat(rows, cols) {
 }
 
 //Function to find Empty Pos on board
-function findEmptyPos() {
+export function findEmptyPos() {
     var emptyPoss = [] // [{i:0,j:0},{i:0,j:1}]
 
     for (var i = 0; i < gBoard.length; i++) {
@@ -133,7 +132,7 @@ function findEmptyPos() {
 }
 
 // copy board
-function copyBoard(board){
+export function copyBoard(board){
     const copyBoard = []
     for(var i=0; i<board.length; i++){
         copyBoard[i] = []
@@ -145,9 +144,10 @@ function copyBoard(board){
 }
 
 // Display a customized message on the screen.s
-function flashMsg(msg) {
+export function flashMsg(msg, type = 'success') {
     var elUserMsg = document.querySelector('.user-msg')
     elUserMsg.innerText = msg
+    elUserMsg.className = `user-msg ${type}`
     elUserMsg.hidden = false
     setTimeout(() => {
         elUserMsg.hidden = true
@@ -155,7 +155,7 @@ function flashMsg(msg) {
 }
 
 // Random color picker
-function getRandomColor() {
+export function getRandomColor() {
     const letters = '0123456789ABCDEF'
     var color = '#'
 
@@ -166,7 +166,7 @@ function getRandomColor() {
 }
 
 // Timer start function
-function startTimer(){
+export function startTimer(){
     gStartTime = Date.now()
     gTimerInterval = setInterval(() => {
         var diff = (Date.now() - gStartTime) / 1000
@@ -174,24 +174,24 @@ function startTimer(){
     }, 100)
 }
 // Timer stop function
-function stopTimer(){
+export function stopTimer(){
     clearInterval(gTimerInterval)
 }
 
 // Element hiding function
-function hideElement(selector) {
+export function hideElement(selector) {
     var el = document.querySelector(selector)
     el.classList.add('hide')
 }
 
 // Function to display an element
-function showElement(selector) {
+export function showElement(selector) {
     var el = document.querySelector(selector)
     el.classList.remove('hide')
 }
 
 //Function to play Sound
-function playSound(){
+export function playSound(){
     const audio = new Audio ('ball-board/sound/collect-points-190037.mp3')
     audio.play()
 }
