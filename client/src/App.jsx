@@ -1,6 +1,7 @@
 // app jsx
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { ProtectedRoute } from './cmps/ProtectedRoute.jsx'
 
 import { Home } from './pages/Home.jsx'
 import { SignupPage } from './pages/SignupPage.jsx'
@@ -20,7 +21,7 @@ export function App() {
         <Route path='/signup' element={<SignupPage />} />
         <Route path='/login' element={<LoginPage />} />
         <Route path='/onboarding' element={<OnBoardingPage />} />
-        <Route path='/dashboard' element={<DashboardPage />} />
+        <Route path='/dashboard' element={<ProtectedRoute><DashboardPage /></ProtectedRoute>} />
       </Routes>
 
       <div className='user-msg' hidden></div>

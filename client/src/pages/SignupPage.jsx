@@ -2,12 +2,16 @@
 
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useAuth } from '../context/AuthContext'
 
 import { signup } from '../services/auth.service.js'
 import { flashMsg } from '../services/util.service.js'
 
 export function SignupPage() {
     const navigate = useNavigate()
+    const { setUser } = useAuth()
+
+
     const [userData, setUserData] = useState({
         name: '',
         email: '',
@@ -24,11 +28,11 @@ export function SignupPage() {
                 JSON.stringify(data.user)
             )
             flashMsg(`Welcome ${data.user.name} `, 'success')
-            
+            setUser(data.user)
             navigate('/onboarding')
         } catch (err) {
             console.log(err)
-            flashMsg('Signup failed', 'error')
+            flashMsg('Signup failed', 'danger')
         }
     }
     

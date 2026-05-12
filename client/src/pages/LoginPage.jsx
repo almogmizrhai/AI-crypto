@@ -2,12 +2,14 @@
 
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useAuth } from '../context/AuthContext'
 
 import { login } from '../services/auth.service.js'
 import { flashMsg } from '../services/util.service.js'
 
 export function LoginPage() {
     const navigate = useNavigate()
+    const { setUser } = useAuth()
     
     const [credentials, setCredentials] = useState({
         email: '',
@@ -25,6 +27,7 @@ export function LoginPage() {
                 JSON.stringify(data.user)
             )
             flashMsg(`Welcome back ${data.user.name} `, 'success')
+            setUser(data.user)
             
             if (!data.user.isOnboardingCompleted) {
                 navigate('/onboarding')
@@ -34,7 +37,7 @@ export function LoginPage() {
         } catch (err) {
             console.log(err)
             
-            flashMsg('Login failed', 'error')
+            flashMsg('Login failed', 'danger')
         }
     }
     
