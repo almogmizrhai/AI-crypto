@@ -1,6 +1,6 @@
 // Dark Mode CMP
 
-const { useEffect, useState } = window.React;
+import { useEffect, useState } from 'react'
 
 export function DarkMode() {
     const [darkMode, setDarkMode] = useState(() => {
