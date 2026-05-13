@@ -8,6 +8,7 @@ import { connectDB } from './config/db.js'
 import authRoutes from './routes/auth.routes.js'
 import onboardingRoutes from './routes/onboarding.routes.js'
 import voteRoutes from './routes/vote.routes.js'
+import aiRoutes from './routes/ai.routes.js'
 
 dotenv.config()
 
@@ -20,6 +21,7 @@ app.use(express.json())
 app.use('/api/auth', authRoutes)
 app.use('/api/onboarding', onboardingRoutes)
 app.use('/api/votes', voteRoutes)
+app.use('/api/ai', aiRoutes)
 
 app.get('/', (req, res) => {
     res.send('API is running...')
