@@ -6,6 +6,10 @@ import { useAuth } from '../context/AuthContext.jsx'
 
 export function Home() {
     const { user } = useAuth()
+
+    const assets = user?.preferences?.assets || []
+    const investorType = user?.preferences?.investorType || 'Not selected yet'
+    const contentTypes = user?.preferences?.contentTypes || []
     
     return (
     <section className="home-page">
@@ -41,21 +45,21 @@ export function Home() {
                     <div className="dashboard-card">
                         <h3>Favorite Assets</h3>
                         <p>
-                            {user.preferences.assets.join(', ')}
+                            {assets.length ? assets.join(', ') : 'No assets selected yet'}
                         </p>
                     </div>
                     
                     <div className="dashboard-card">
                         <h3>Investor Type</h3>
                         <p>
-                            {user.preferences.investorType}
+                            {investorType}
                         </p>
                     </div>
                     
                     <div className="dashboard-card">
                         <h3>Preferred Content</h3>
                         <p>
-                            {user.preferences.contentTypes.join(', ')}
+                            {contentTypes.length ? contentTypes.join(', ') : 'No content types selected yet'}
                         </p>
                     </div>
                 </div>
