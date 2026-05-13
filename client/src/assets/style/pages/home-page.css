@@ -1,0 +1,39 @@
+/* home page css  */
+
+.home-page{
+    padding: 0 80px;
+
+    .guest-home{
+        .home-actions{
+            display: grid;
+            grid-auto-flow: column;
+            justify-content: stretch;
+            justify-items: center; 
+
+            a{
+                padding: 10px 14px ;
+                border: 1px solid var(--border);
+                border-radius: 15px;
+
+                &:hover{
+                    background-color: var(--primary-hover);
+                }
+            }
+
+        }
+    }
+
+    .preferences-preview{
+        padding: 10px 0;
+    }
+
+    .dashboard-link{
+        padding: 10px 14px ;
+        border: 1px solid var(--border);
+        border-radius: 15px;
+        
+        &:hover{
+            background-color: var(--primary-hover);
+        }
+    }
+}
