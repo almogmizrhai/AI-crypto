@@ -1,0 +1,12 @@
+/* coin-section css */
+
+.coin-section {
+    display: grid;
+    grid-auto-flow: row;
+    margin: 20px 0;
+
+    .coin-grid{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+}

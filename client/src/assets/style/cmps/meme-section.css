@@ -1,0 +1,12 @@
+/* Meme Section css */
+
+.meme-section{
+    margin: 20px 0;
+
+    .meme-card img {
+        max-width: 100%;
+        width: 320px;
+        border-radius: 12px;
+        display: block;
+    }
+}

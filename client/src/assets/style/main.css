@@ -14,9 +14,16 @@
 @import 'pages/signup-page.css';
 @import 'pages/login-page.css';
 @import 'pages/onboarding-page.css';
+@import 'pages/dashboard-page.css';
 
 /* Components */
 @import 'cmps/app-header.css';
 @import 'cmps/dark-mode.css';
 @import 'cmps/user-msg.css';
 @import 'cmps/nav-bar.css';
+@import 'cmps/dashboard-header.css';
+@import 'cmps/coin-section.css';
+@import 'cmps/news-section.css';
+@import 'cmps/insight-section.css';
+@import 'cmps/meme-section.css';
+@import 'cmps/vote-buttons.css';
