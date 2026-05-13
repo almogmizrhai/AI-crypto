@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react'
 
 import { useAuth } from '../context/AuthContext.jsx'
 import { getCryptoNews } from '../services/dashboard.service.js'
+import { VoteButtons } from './VoteButtons.jsx'
+
 
 export function NewsSection() {
     const { user } = useAuth()
@@ -41,6 +43,10 @@ export function NewsSection() {
                     <h3>{item.title}</h3>
                     <p> {item.source} · {item.asset} </p>
                     <a href={item.url}>Read more</a>
+                    <VoteButtons 
+                        sectionType='news'
+                        contentId={item.id}
+                    />
                 </article>
             ))}
         </div>

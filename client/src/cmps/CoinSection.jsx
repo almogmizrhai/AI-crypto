@@ -2,9 +2,11 @@
 
 import { useEffect, useState } from 'react'
 
-import { useAuth } from '../context/AuthContext'
+import { useAuth } from '../context/AuthContext.jsx'
 
-import { getCoinPrices } from '../services/dashboard.service'
+import { getCoinPrices } from '../services/dashboard.service.js'
+import { VoteButtons } from './VoteButtons.jsx'
+
 
 export function CoinSection() {
     const { user } = useAuth()
@@ -38,7 +40,7 @@ export function CoinSection() {
         
         <div className="coin-grid grid">
             {coins.map((coin) => (
-                <div className='dashboard-card' key={coin.id}>
+                <div className="dashboard-card" key={coin.id}>
                     <h3> {coin.name} ({coin.symbol.toUpperCase()}) </h3>
                     <p> 💰 ${coin.current_price} </p>
                     
@@ -49,6 +51,12 @@ export function CoinSection() {
                     </p>
                     
                     <img src={coin.image} width='50'/>
+
+                    <VoteButtons
+                    sectionType='coin'
+                    contentId={coin.id}
+                    />
+                    
                 </div>
             ))}
         </div>

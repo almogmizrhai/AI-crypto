@@ -100,3 +100,12 @@ export async function getCryptoMeme() {
     ]
   return memes[Math.floor(Math.random() * memes.length)]
 }
+
+export async function saveVote(voteData) {
+    const res = await axios.post(
+        'http://localhost:3030/api/votes',
+        voteData
+    )
+    
+    return res.data
+}

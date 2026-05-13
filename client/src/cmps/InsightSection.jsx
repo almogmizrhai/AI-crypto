@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react'
 
 import { useAuth } from '../context/AuthContext.jsx'
 import { getAiInsight } from '../services/dashboard.service.js'
+import { VoteButtons } from './VoteButtons.jsx'
+
 
 export function InsightSection() {
     const { user } = useAuth()
@@ -33,7 +35,11 @@ export function InsightSection() {
         <h2>{insight.title}</h2>
         <div className="insight-card">
             <p>{insight.text}</p>
-            </div>
+            <VoteButtons
+                sectionType='insight'
+                contentId={insight.id}
+            />
+        </div>
     </section>
     )
 }

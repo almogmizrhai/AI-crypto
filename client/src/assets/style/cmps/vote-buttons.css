@@ -1,0 +1,13 @@
+/* vote-buttons css */
+
+.vote-buttons{
+    margin: 5px 7px;
+
+    button{
+        border: 1px solid var(--border);
+
+        &:hover{
+            background-color: var(--primary-hover);
+        }
+    }
+}

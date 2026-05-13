@@ -3,6 +3,8 @@
 import { useEffect, useState } from 'react'
 
 import { getCryptoMeme } from '../services/dashboard.service.js'
+import { VoteButtons } from './VoteButtons.jsx'
+
 
 export function MemeSection() {
     const [meme, setMeme] = useState(null)
@@ -31,6 +33,10 @@ export function MemeSection() {
             <p>{meme.title}</p>
             <img src={meme.imageUrl} alt={meme.title} />
         </div>
+        <VoteButtons
+            sectionType='meme'
+            contentId={meme.id}
+        />
     </section>
     )
 }
