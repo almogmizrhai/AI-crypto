@@ -3,6 +3,7 @@
 import { Link } from 'react-router-dom'
 
 import { useAuth } from '../context/AuthContext.jsx'
+// import { OnBoardingPage } from './pages/OnBoardingPage.jsx'
 
 export function Home() {
     const { user } = useAuth()
@@ -63,8 +64,12 @@ export function Home() {
                         </p>
                     </div>
                 </div>
+
+                <div className="home-actions">
+                    <Link className="dashboard-link" to='/dashboard' > Dashboard </Link>
+                    <Link className="dashboard-link" to='/onboarding' > Update Preferences </Link>
+                </div>
                 
-                <Link className="dashboard-link" to='/dashboard' > Dashboard </Link>
             </div>
         )}
         
