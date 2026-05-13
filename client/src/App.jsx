@@ -9,6 +9,8 @@ import { LoginPage } from './pages/LoginPage.jsx'
 import { OnBoardingPage } from './pages/OnBoardingPage.jsx'
 import { DashboardPage } from './pages/DashboardPage.jsx'
 import { Navbar } from './cmps/Navbar.jsx'
+import { Footer } from './cmps/Footer.jsx'
+
 
 
 
@@ -25,6 +27,8 @@ export function App() {
       </Routes>
 
       <div className='user-msg' hidden></div>
+      <Footer />
+      
     </BrowserRouter>
   )
 }
