@@ -1,8 +1,8 @@
 // vote routes js
 
 import express from 'express'
+import { Vote } from '../models/vote'
 
-import { Vote } from '../models/Vote.js'
 
 const router = express.Router()
 
